@@ -1,0 +1,76 @@
+/**
+ * Base theme variables. Imported once by the app. Light is default; the
+ * `.dark` class flips to the dark palette. Accent is overridable per theme
+ * via the `data-accent` attribute.
+ */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 262 83% 58%;
+  --type-correct: 142 71% 35%;
+  --type-incorrect: 0 72% 51%;
+  --type-pending: 215 16% 60%;
+  --type-caret: 262 83% 58%;
+  --success: 142 71% 35%;
+  --warning: 38 92% 45%;
+  --danger: 0 72% 51%;
+
+  --accent: 262 83% 58%;
+  --accent-foreground: 0 0% 100%;
+}
+
+.dark {
+  --background: 222 47% 7%;
+  --foreground: 210 40% 96%;
+  --card: 222 44% 10%;
+  --card-foreground: 210 40% 96%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --border: 217 33% 20%;
+  --input: 217 33% 20%;
+  --ring: 262 83% 64%;
+  --type-correct: 142 69% 58%;
+  --type-incorrect: 0 84% 65%;
+  --type-pending: 215 20% 45%;
+  --type-caret: 262 83% 70%;
+  --success: 142 69% 58%;
+  --warning: 38 92% 58%;
+  --danger: 0 84% 65%;
+}
+
+/* Accent themes (apply with data-accent on <html>). */
+[data-accent='violet'] {
+  --accent: 262 83% 58%;
+  --accent-foreground: 0 0% 100%;
+  --ring: 262 83% 58%;
+  --type-caret: 262 83% 58%;
+}
+[data-accent='cyan'] {
+  --accent: 189 94% 43%;
+  --accent-foreground: 222 47% 11%;
+  --ring: 189 94% 43%;
+  --type-caret: 189 94% 43%;
+}
+[data-accent='amber'] {
+  --accent: 38 92% 50%;
+  --accent-foreground: 222 47% 11%;
+  --ring: 38 92% 50%;
+  --type-caret: 38 92% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

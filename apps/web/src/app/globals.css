@@ -1,0 +1,50 @@
+@import '@nexovexo/ui/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  /* Visible focus ring for keyboard navigation (accessibility). */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Copy-typing boxes: wrap at word boundaries like a normal paragraph.
+     The container owns the whitespace/wrapping behaviour; per-character
+     spans are plain inline so the browser can break between words. */
+  .copy-box {
+    white-space: pre-wrap;   /* preserve + wrap spaces */
+    word-break: normal;
+    overflow-wrap: break-word; /* break only absurdly long words */
+  }
+  .typed-char,
+  .source-char {
+    display: inline;
+  }
+  /* Keep an empty typed slot anchorable (zero-width) for the caret. */
+  .typed-char:empty::before {
+    content: '\200b';
+  }
+  .bg-grid {
+    background-image: radial-gradient(
+      hsl(var(--border)) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+}
